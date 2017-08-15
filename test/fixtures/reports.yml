@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  symp: MyText
+  analysis: MyText
+  presc: MyText
+  patient: one
+
+two:
+  symp: MyText
+  analysis: MyText
+  presc: MyText
+  patient: two

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Symp:</strong>
+  <%= @report.symp %>
+</p>
+
+<p>
+  <strong>Analysis:</strong>
+  <%= @report.analysis %>
+</p>
+
+<p>
+  <strong>Presc:</strong>
+  <%= @report.presc %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @report.patient %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>
