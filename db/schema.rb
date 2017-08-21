@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170813220916) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "patients", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
@@ -26,10 +29,11 @@ ActiveRecord::Schema.define(version: 20170813220916) do
     t.text "symp"
     t.text "analysis"
     t.text "presc"
-    t.integer "patient_id"
+    t.bigint "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_reports_on_patient_id"
   end
 
+  add_foreign_key "reports", "patients"
 end
