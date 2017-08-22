@@ -45,35 +45,6 @@
 <% end %>
 </tbody>
 </table>
-
-
-<h2>Add a report:</h2>
-<%= form_for([@patient, @patient.reports.build]) do |form| %>
-   <div class="field form-group">
-    <%= form.label :symp, class: 'col-sm-2 control-label'%>
-    <div class="col-sm-10">
-    <%= form.text_area :symp, id: :report_symp %>
-    </div>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :analysis, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-    <%= form.text_area :analysis, id: :report_analysis %>
-    </div>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :presc, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-    <%= form.text_area :presc, id: :report_presc %>
-    </div>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', patients_path %>
+<%= link_to 'New Report', new_patient_report_path(@patient), class: 'btn btn-default' %>
+<br>
+<%= link_to 'Back', patients_path, class: 'btn btn-default' %>

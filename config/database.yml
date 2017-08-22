@@ -11,7 +11,8 @@ default: &default
   database: store_development
   username: abel
   password: 73441710bliokiN
-  
+  timeout: 5000
+
 development:
   adapter: postgresql
   encoding: unicode
@@ -19,6 +20,7 @@ development:
   pool: 5
   username: abel
   password: 73441710bliokiN
+  timeout: 5000
 
 test:
   adapter: postgresql
@@ -27,3 +29,4 @@ test:
   pool: 5
   username: abel
   password: 73441710bliokiN
+  timeout: 5000

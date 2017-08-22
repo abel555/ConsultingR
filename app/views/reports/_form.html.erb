@@ -1,37 +1,44 @@
-<%= form_with(model: report, local: true) do |form| %>
+
+<%= form_with(model: [ @patient, Report.new ], url: patient_reports_path) do |form| %>
   <% if report.errors.any? %>
-    <div id="error_explanation">
+  <div class="alert alert-danger">
+    
       <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
 
-      <ul>
+      <ul class="rails-bootstrap-forms-error-summary">
       <% report.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
+    
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :symp %>
+  <div class="field form-group">
+    <%= form.label :symp, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
     <%= form.text_area :symp, id: :report_symp %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :analysis %>
+  <div class="field form-group">
+    <%= form.label :analysis, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
     <%= form.text_area :analysis, id: :report_analysis %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :presc %>
+  <div class="field form-group">
+    <%= form.label :presc, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
     <%= form.text_area :presc, id: :report_presc %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :patient_id %>
-    <%= form.text_field :patient_id, id: :report_patient_id %>
-  </div>
+ 
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

@@ -2,4 +2,4 @@
 
 <%= render 'form', report: @report %>
 
-<%= link_to 'Back', reports_path %>
+<%= link_to 'Back', patient_path(params[:patient_id], @patient_report), class: 'btn btn-default'%>
