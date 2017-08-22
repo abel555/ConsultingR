@@ -1,5 +1,6 @@
 <%= form_with(model: patient, local: true) do |form| %>
   <% if patient.errors.any? %>
+    
     <div class="alert alert-danger">
       <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:
       </h2>
@@ -10,39 +11,40 @@
       <% end %>
       </ul>
     </div>
+    <br>
   <% end %>
   
   <div class="field form-group">
     <%= form.label :firstName, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div >
     <%= form.text_field :firstName, id: :patient_firstName %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= form.label :lastName, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div >
     <%= form.text_field :lastName, id: :patient_lastName %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= form.label :sex, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div >
     <%= form.text_field :sex, id: :patient_sex %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= form.label :age, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div >
     <%= form.number_field :age, id: :patient_age %>
     </div>
   </div>
 
   <div class="field form-group">
     <%= form.label :address, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
+    <div >
     <%= form.text_field :address, id: :patient_address %>
     </div>
   </div>

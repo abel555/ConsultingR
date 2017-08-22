@@ -1,18 +1,22 @@
 
-<%= form_with(model: [ @patient, Report.new ], url: patient_reports_path) do |form| %>
+<%= form_with(model: [ @patient, @report ], url: patient_reports_path) do |form| %>
+
   <% if report.errors.any? %>
+  <h2>jajajjaja xdxdxdxd</h2>
   <div class="alert alert-danger">
     
       <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
 
       <ul class="rails-bootstrap-forms-error-summary">
-      <% report.errors.full_messages.each do |message| %>
+      <% @report.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     
     </div>
+
   <% end %>
+
 
   <div class="field form-group">
     <%= form.label :symp, class: 'col-sm-2 control-label' %>

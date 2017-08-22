@@ -25,7 +25,7 @@ class ReportsController < ApplicationController
   # POST /reports.json
   def create
     @patient = Patient.find(params[:patient_id])
-    @report = @patient.reports.create(report_params)
+    @report = @patient.reports.new(report_params)
     
     respond_to do |format|
       if @report.save
